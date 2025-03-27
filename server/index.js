@@ -12,7 +12,7 @@ app.use(cors({
     orirgin:"https://event-ease-frondend.vercel.app/",
     credentials:true,
     methods:['GET','POST','PUT','DELETE'],
-    allowedHeaders:['Content-type','Authorization']
+    // allowedHeaders:['Content-type','Authorization']
 
 
 }))
