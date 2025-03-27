@@ -9,7 +9,7 @@ const app=express()
 app.use(express.json())
 app.use(cookieparser())
 app.use(cors({
-    orirgin:`${process.env.CLIENT_SITE_URL}`,
+    orirgin:"https://event-ease-frondend.vercel.app/",
     credentials:true,
     methods:['GET','POST','PUT','DELETE'],
     allowedHeaders:['Content-type','Authorization']
