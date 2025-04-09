@@ -54,12 +54,16 @@ const Eventcard = ({ event }) => {
           alt="img" />
       </figure>
       <div className="card-body">
+      <span className="badge h-10 badge-xs badge-warning">{event.tickettype}-${event.ticketprice}</span>
+      
         <h2 className="card-title">{event.title}</h2>
         <p>date:{event.eventdate}</p>
         <p>Time:{event.eventtime}</p>
         <p>ticekt price:{event.ticketprice}</p>
         <p>Location:{event.location}</p>
         <p>Event type:{event.eventtype}</p>
+        <p>Ticekt type:{event.tickettype}</p>
+   
         <p>{userData.user._id}</p>
 
 

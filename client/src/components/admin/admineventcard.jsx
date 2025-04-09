@@ -32,6 +32,8 @@ const deleteEvent=(eventId)=>{
       alt="Movie" className='object-cover-w-full h-full' />
   </figure>
   <div className="card-body">
+  <span className="badge  h-10 badge-xs badge-warning">{event.tickettype}-${event.ticketprice}</span>
+    
     <h2 className="card-title">{event.title}</h2>
     <p>{event.description}</p>
     

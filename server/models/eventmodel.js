@@ -3,8 +3,8 @@ const mongoose=require('mongoose')
 const eventSchema=new mongoose.Schema({
     title:{
         type:String,
-        required:true,
-        unique:true
+        required:true
+        
     },
    description: {
 
@@ -34,6 +34,10 @@ const eventSchema=new mongoose.Schema({
     },
     ticketprice:{
         type:Number,
+        required:true
+    },
+    tickettype:{
+        type:String,
         required:true
     },
     image:{

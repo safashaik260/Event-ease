@@ -59,12 +59,14 @@ const Adminheader = () => {
         <li onClick={()=> navigate("/ticket")}><a>Bookings</a>
         </li>
       <li onClick={()=> navigate("/adminevents")}><a>Manage events</a></li>
+      <li onClick={()=> navigate("/users")}><a>users</a></li>
       <li onClick={()=> navigate("/create")}><a>create event</a></li>
       
     </ul>
   </div>
   <div className="navbar-end">
   <button className='btn'onClick={handleLogout}>Logout</button>
+  
   </div>
 </div>
   )

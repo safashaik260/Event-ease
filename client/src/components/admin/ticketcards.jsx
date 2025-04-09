@@ -19,7 +19,7 @@ const deleteEvent=(ticketId)=>{
             console.log(err)
         })
         alert('ticket deleted succefully')
-        navigate("/admin") 
+        navigate("/admin")
 
     } catch (error) {
         console.log(error)
@@ -32,7 +32,7 @@ const deleteEvent=(ticketId)=>{
   return (
     <div className="card w-96 bg-base-100 shadow-sm">
     <div className="card-body">
-      <span className="badge badge-xs badge-warning">Ticket</span>
+      <span className="badge badge-xs badge-warning">{ticket.tickettype}</span>
       <div className="flex justify-between">
         <h2 className="text-3xl font-bold">{ticket.eventname}</h2>
         <span className="text-xl"></span>

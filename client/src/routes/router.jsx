@@ -19,6 +19,7 @@ import Updateeventpage from "../pages/admin/updateeventpage"
 import ContactUspage from "../pages/user/ContactUspage"
 import Paymentsuccespage from "../pages/user/paymentsuccespage"
 import UserBookingspage from "../pages/user/userBookingspage"
+import Userlistingpage from "../pages/admin/userlistingpage"
 //import Eventticketpage from "../pages/admin/eventticketpage"
 
 
@@ -121,6 +122,12 @@ export const router=createBrowserRouter([
                 element:<Updateeventpage/>,
         
             },
+            {
+                path:"users",
+                element:<Userlistingpage/>,
+        
+            },
+        
         
 
 

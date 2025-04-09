@@ -3,9 +3,9 @@ const uploadtoCloudinary = require("../utilities/imageupoload")
 
 const createEvent = async (req, res) => {
     try {
-        const { title, description, organisedby, eventtype, eventdate, eventtime, location, ticketprice } = req.body
+        const { title, description, organisedby, eventtype, eventdate, eventtime, location, ticketprice,tickettype } = req.body
 
-        if (!title || !description || !organisedby || !eventtype || !eventdate || !eventtime || !location || !ticketprice) {
+        if (!title || !description || !organisedby || !eventtype || !eventdate || !eventtime || !location || !ticketprice||!tickettype) {
 
             return res.status(400).json({ error: "all fields are required" })
         }
@@ -16,7 +16,7 @@ const createEvent = async (req, res) => {
         const cloudinaryRes = await uploadtoCloudinary(req.file.path)
         console.log(cloudinaryRes, "image uploaded by cloudinary")
         const newEvent = new eventDb({
-            title, description, organisedby, eventtype, eventdate, eventtime, location, ticketprice, image: cloudinaryRes
+            title, description, organisedby, eventtype, eventdate, eventtime, location,tickettype, ticketprice, image: cloudinaryRes
 
         })
         let savedEvent = await newEvent.save()
@@ -60,7 +60,7 @@ const eventDetails = async (req, res) => {
 const updateEvents = async (req, res) => {
     try {
         const { eventId } = req.params;
-        const { title, description, organisedby, eventtype, eventdate, eventtime, location, ticketprice } = req.body
+        const { title, description, organisedby, eventtype, eventdate, eventtime, location, ticketprice,tickettype } = req.body
         let imageUrl;
 
         let isevnetExist = await eventDb.findById(eventId)

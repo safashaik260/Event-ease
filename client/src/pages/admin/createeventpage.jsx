@@ -12,6 +12,9 @@ const Createeventpage = () => {
     const [location, setLocation] = useState('');
     const [organisedby, setOrganisedby] = useState('');
     const [ticketprice, setTicketprice] = useState('');
+    const [tickettype, setTickettype] = useState('');
+
+
 
     const [image, setImage] = useState(null);
     const navigate=useNavigate()
@@ -29,6 +32,7 @@ const Createeventpage = () => {
         formData.append('location', location);
         formData.append('organisedby', organisedby);
         formData.append('ticketprice', ticketprice);
+        formData.append('tickettype', tickettype);
         formData.append('image', image);
         try {
             const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/event/create`, formData, {
@@ -109,6 +113,13 @@ const Createeventpage = () => {
                             <input type="text" className="input" 
                                 value={organisedby}
                                 onChange={(e) => setOrganisedby(e.target.value)}
+                                required
+
+                            />
+                            <label className="fieldset-label">ticket type</label>
+                            <input type="text" className="input" 
+                                value={tickettype}
+                                onChange={(e) => setTickettype(e.target.value)}
                                 required
 
                             />

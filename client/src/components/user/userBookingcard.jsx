@@ -8,7 +8,7 @@ const UserBookingCard = ({ticket}) => {
   return (
     <div className="card w-96 bg-base-100 shadow-sm">
     <div className="card-body">
-      <span className="badge badge-xs badge-warning">Ticket</span>
+      <span className="badge badge-xs badge-warning">{ticket.tickettype}</span>
       <div className="flex justify-between">
         <h2 className="text-3xl font-bold">{ticket.eventname}</h2>
         <span className="text-xl"></span>

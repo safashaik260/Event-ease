@@ -59,20 +59,47 @@ const login =async(req,res)=>{
      
     }
 }
-const logout =(req,res)=>{
+const logout =async(req,res)=>{
     try {
         res.clearCookie("token")
         res.status(200).json({messge:"logged out"})
         
     } catch (error) {
-        onsole.log(error)
+        console.log(error)
         res.status(error.status||500).json({error:error.message||"internal error"})
       
+    }
+}
+const userlist=async(req,res)=>{
+    try {
+        //const page = parseInt(req.query.page) || 1;
+    //const limit = parseInt(req.query.limit) || 10;
+    //const skip = (page - 1) * limit;
+
+    const [users, total] = await Promise.all([
+      Userdb.find().select('-password'),
+      Userdb.countDocuments()
+    ]);
+
+    res.status(200).json({
+      success: true,
+      //count: users.length,
+      //total,
+      //page,
+     // pages: Math.ceil(total / limit),
+      data: users
+    });
+ 
+    } catch (error) {
+        console.log(error)
+        res.status(error.status||500).json({error:error.message||"internal error"})
+      
+   
     }
 }
 
 
 
 module.exports={
-    register,login,logout
+    register,login,logout,userlist
 }

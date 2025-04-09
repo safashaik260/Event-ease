@@ -25,7 +25,7 @@ const stripe=require('stripe')(process.env.STRIPE_SECRET_KEY)
               line_items: [
                 {
                   price_data: {
-                    currency: 'inr',
+                    currency: 'usd',
                     product_data: {
                       name: `Event Ticket - ${event.title}`,
                       description: event.description,
@@ -57,9 +57,10 @@ const stripe=require('stripe')(process.env.STRIPE_SECRET_KEY)
                 event:event._id,
                 eventname:event.title,
                 ticketprice:event.ticketprice,
+                tickettype:event.tickettype,
                 sessionid:session.id,
                 username:user.name,
-                user:user._id
+                user:user._id,
                 
                 
             
